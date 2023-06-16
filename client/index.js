@@ -18,7 +18,7 @@ async function main() {
   const proof = tree.getProof(niceList.indexOf(name));
 
   const { data: gift } = await axios.post(`${serverUrl}/gift`, {
-    name,
+    name: JSON.stringify(name),
     proof,
   });
 
